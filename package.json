@@ -1,0 +1,27 @@
+{
+  "name": "socmed",
+  "version": "1.0.0",
+  "description": "Membuat aplikasi sosial media dimana user bisa membuat akun profil",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandojuberd/socmed-sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandojuberd/socmed-sequelize/issues"
+  },
+  "homepage": "https://github.com/brandojuberd/socmed-sequelize#readme"
+}
