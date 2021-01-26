@@ -3,9 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include("./partials/css.ejs") %>
   <title></title>
 </head>
 <body>
-  <h1>Welcome to Socmed</h1>
+  <div class="container">
+    <!-- Content here -->
+    <h1>List of Registered Users</h1>
+    <table style="width:100%" border="1px">
+      <tr>
+        <th>Name</th>
+        <th>Birth Date</th>
+        <th>Username</th>
+      </tr>
+      <% data.forEach((datum)=>{ %>
+        <tr>
+          <td><%= datum.name%></td>
+          <td><%= datum.birthdate%></td>
+          <td><%= datum.username%></td>
+
+        </tr>
+      <% }) %>
+
+
+    </table>
+    <div>
+      <a href="/register">Register</a>
+    </div>
+  </div>
 </body>
 </html>

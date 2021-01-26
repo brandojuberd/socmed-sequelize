@@ -14,16 +14,34 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   User.init({
-    name: DataTypes.STRING,
-    username: DataTypes.STRING,
-    password: {
+    name: {
       type : DataTypes.STRING,
       allowNull: false,
       validate:{
         notNull: {
-          args: true,
-          msg: "Password required"
+          args: true
+        }
+
+      }
+    },
+    username: {
+      type : DataTypes.STRING,
+      unique: {
+        msg: "Username must be unique"
+      },
+      allowNull: false,
+      validate:{
+        is: {
+          args: /^(?=.{8})/,
+          msg: 'Username must contain at least 8 characters.'
         },
+
+      }
+    },
+    password: {
+      type : DataTypes.STRING,
+      allowNull: false,
+      validate:{
         // is: {
         //   args: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-!@#$%^&*()_+=]).{8,}$/,
         //   msg: 'Password must contain at least 8 characters including at least a uppercase, a lowercase and a number.'
